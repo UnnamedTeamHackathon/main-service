@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MainService.Models\MainService.Models.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.1.35" />
+      <PackageReference Include="dbup-postgresql" Version="5.0.40" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Migrations\Resources\0001_Create_users.sql" />
+      <EmbeddedResource Include="Migrations\Resources\0001_Create_users.sql" />
+      <None Remove="Migrations\Resources\0002_Create_courses.sql" />
+      <EmbeddedResource Include="Migrations\Resources\0002_Create_courses.sql" />
+      <None Remove="Migrations\Resources\0003_Create_reviews.sql" />
+      <None Remove="Migrations\Resources\0004_Create_user_favorites.sql" />
+      <None Remove="Migrations\Resources\0005_Create_modules.sql" />
+      <None Remove="Migrations\Resources\0004_Create_lessons.sql" />
+      <None Remove="Migrations\Resources\0003_Create_modules.sql" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Repositories\Scripts\Sql.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Sql.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Repositories\Scripts\Sql.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Sql.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Migrations\Resources\0003_Create_modules.sql" />
+      <EmbeddedResource Include="Migrations\Resources\0004_Create_lessons.sql" />
+    </ItemGroup>
+
+</Project>

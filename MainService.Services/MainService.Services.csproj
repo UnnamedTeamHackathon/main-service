@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MainService.Common\MainService.Common.csproj" />
+      <ProjectReference Include="..\MainService.DataAccess\MainService.DataAccess.csproj" />
+      <ProjectReference Include="..\MainService.Models\MainService.Models.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.4.1" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.4.1" />
+    </ItemGroup>
+
+</Project>
